@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab10: API Calls</title>
+
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Typed.js header animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="appTitle">Lab10: API Calls</h1>
+      <p></p>
+    </header>
+
+    <div id="customizationPage" class="visible">
+      <div class="customization-container">
+
+        <!-- Controls Column -->
+        <div class="form-column">
+          <div class="form-container">
+            <h3 class="outputh3">Controls</h3>
+
+            <button id="btnFetch">Fetch Data (fetch)</button>
+            <button id="btnXHR">Fetch Data (XHR)</button>
+            <!-- Reset Counter & Storage -->
+            <button id="resetCounter">Reset ID Counter</button>
+            <div id="resetMessage" class="form-message"></div>
+
+
+            <form id="postForm">
+              <h4>Create Post (POST)</h4>
+              <div class="form-group">
+                <label for="postTitle">Title</label>
+                <input type="text" id="postTitle" required />
+              </div>
+              <div class="form-group">
+                <label for="postBody">Body</label>
+                <textarea id="postBody" rows="3" required></textarea>
+              </div>
+              <button type="submit">Send POST</button>
+              <div id="postMessage" class="form-message"></div>
+            </form>
+
+            <form id="putForm">
+              <h4>Update Post (PUT)</h4>
+              <div class="form-group">
+                <label for="putId">Post ID</label>
+                <input
+                  type="number"
+                  id="putId"
+                  min="1" max="100"
+                  required
+                  placeholder="1–100 only"
+                />
+              </div>
+              <div class="form-group">
+                <label for="putTitle">New Title</label>
+                <input type="text" id="putTitle" required />
+              </div>
+              <div class="form-group">
+                <label for="putBody">New Body</label>
+                <textarea id="putBody" rows="3" required></textarea>
+              </div>
+              <button type="submit">Send PUT</button>
+              <div id="putMessage" class="form-message"></div>
+            </form>
+
+            <!-- New DELETE Form -->
+            <form id="deleteForm">
+              <h4>Delete Post (DELETE)</h4>
+              <div class="form-group">
+                <label for="deleteId">Post ID</label>
+                <input
+                  type="number"
+                  id="deleteId"
+                  min="1" max="100"
+                  required
+                  placeholder="1–100 only"
+                />
+              </div>
+              <button type="submit">Delete Post</button>
+              <div id="deleteMessage" class="form-message"></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Live‑View Column -->
+        <div class="output-column">
+          <div class="output">
+            <h3 class="outputh3">Live View</h3>
+            <!-- This single container will show GET, POST, PUT & DELETE results -->
+            <div id="elementOutput"></div>
+            <!-- GET/XHR results -->
+            <div id="getOutput" class="result"></div>
+
+            <!-- Live posts -->
+            <div id="elementOutput" class="result"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Dark‑mode toggle -->
+  <button class="theme-toggle" id="themeToggle">
+    <i id="theme-icon" class="fas fa-toggle-off"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
